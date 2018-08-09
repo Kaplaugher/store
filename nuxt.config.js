@@ -54,14 +54,6 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-  generate: {
-    routes: function() {
-      return [
-        '/products/1'
-      ]
-    }
-  }
-
   /*
   ** Build configuration
   */
@@ -77,6 +69,11 @@ module.exports = {
           }),
         ];
       }
+    },
+  },
+  generate: {
+    routes() {
+      return ['/products/1'];
     },
   },
 };
