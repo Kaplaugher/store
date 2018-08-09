@@ -28,7 +28,17 @@
           @mouseover="updateProduct(variant.variantImage)">
           </div>
 
-          <v-btn class="mt-4" color="info" :disabled="!inStock">Add to Cart</v-btn>
+          <v-btn
+            class="mt-4 snipcart-add-item"
+            color="info"
+            :disabled="!inStock"
+            data-item-id="1"
+            data-item-name="Shirt1"
+            data-item-price="25.00"
+            data-item-weight="1"
+            data-item-url="/products/1"
+            data-item-description="Kick ass shirt niggaaa">Add to Cart
+          </v-btn>
       </div>
     </section>
   </div>
@@ -38,27 +48,27 @@
 export default {
   data() {
     return {
-      product: "tshirt 1",
+      product: 'tshirt 1',
       image:
-        "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1533688012/onlineStore/vmSocks-green-onWhite.jpg",
+        'https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1533688012/onlineStore/vmSocks-green-onWhite.jpg',
       inStock: true,
       inventory: 100,
-      details: ["80% cotton", "20% polyester", "Gender-neutral"],
+      details: ['80% cotton', '20% polyester', 'Gender-neutral'],
       variants: [
         {
           variantId: 2234,
-          variantColor: "green",
+          variantColor: 'green',
           variantImage:
-            "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1533688012/onlineStore/vmSocks-green-onWhite.jpg"
+            'https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1533688012/onlineStore/vmSocks-green-onWhite.jpg'
         },
         {
           variantId: 2235,
-          variantColor: "blue",
-          varientImage:
-            "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1533774148/onlineStore/vmSocks-blue-onWhite.jpg"
+          variantColor: 'blue',
+          variantImage:
+            'https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1533774148/onlineStore/vmSocks-blue-onWhite.jpg'
         }
       ],
-      sizes: ["Large", "Medium", "Small", "X-Sm"]
+      sizes: ['Large', 'Medium', 'Small', 'X-Sm']
     };
   },
   methods: {
