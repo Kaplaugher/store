@@ -34,7 +34,7 @@
             :disabled="!inStock"
             data-item-id="1"
             data-item-name="Shirt1"
-            data-item-price="25.00"
+            :data-item-price="price"
             data-item-weight="1"
             data-item-url="/products/1"
             data-item-description="Kick ass shirt niggaaa">Add to Cart
@@ -53,6 +53,7 @@ export default {
         'https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1533688012/onlineStore/vmSocks-green-onWhite.jpg',
       inStock: true,
       inventory: 100,
+      price: '10.00',
       details: ['80% cotton', '20% polyester', 'Gender-neutral'],
       variants: [
         {
