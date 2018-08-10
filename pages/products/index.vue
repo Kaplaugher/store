@@ -1,18 +1,16 @@
   <template>
-    <products-wrapper>
-      <div class="products-list">
-        <ProductPreview
-          v-for="product in products"
-          :key="product.id"
-          :title="product.title"
-          :imgUrl="product.imgUrl"
-          :previewText="product.previewText"
-          :id="product.id"/>
-      </div>
-    </products-wrapper>
+    <v-container grid-list-lg>
+      <v-layout row wrap justify-center>
+        <v-flex xs12 sm4 v-for="product in products" :key="product.id">
+          <ProductPreview
+            :title="product.title"
+            :imgUrl="product.imgUrl"
+            :previewText="product.previewText"
+            :id="product.id"/>
+        </v-flex>
+      </v-layout>
+    </v-container>
   </template>
-
-  </v-container>
 
   <script>
   import ProductPreview from '@/components/Products/ProductPreview'
@@ -42,13 +40,5 @@ export default {
 </script>
 
 <style>
-.products-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
 
-.card {
-  width: 300px;
-}
 </style>
