@@ -13,27 +13,32 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
     ],
     script: [
-      { src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' },
-      { src: "https://cdn.snipcart.com/scripts/2.0/snipcart.js",
-        'data-api-key': "NzZhNThhNzgtMmQwMS00NmY1LTk1YTUtYTE2Y2RhOTg2YWM1NjM2NDc0OTEyMjUyNzMxNTI3",
-        id: "snipcart" }
+      {
+        src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js',
+      },
+      {
+        src: 'https://cdn.snipcart.com/scripts/2.0/snipcart.js',
+        'data-api-key':
+          'NzZhNThhNzgtMmQwMS00NmY1LTk1YTUtYTE2Y2RhOTg2YWM1NjM2NDc0OTEyMjUyNzMxNTI3',
+        id: 'snipcart',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
       },
       {
         href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css',
         rel: 'stylesheet',
-        type: 'text/css'
-      }
-    ]
+        type: 'text/css',
+      },
+    ],
   },
 
   /*
@@ -56,7 +61,15 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: 'dlNzjbdgFpC96Wx5uLge9Att',
+        cacheProvider: 'memory',
+        timeout: 5000,
+      },
+    ],
   ],
 
   /*
@@ -76,15 +89,15 @@ module.exports = {
       if (ctx.isServer) {
         config.externals = [
           nodeExternals({
-            whitelist: [/^vuetify/]
-          })
+            whitelist: [/^vuetify/],
+          }),
         ];
       }
-    }
+    },
   },
   generate: {
     routes() {
       return ['/products/1'];
-    }
-  }
+    },
+  },
 };
