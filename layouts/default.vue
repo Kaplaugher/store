@@ -25,8 +25,8 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Link One</v-btn>
-      <v-btn flat>Link Two</v-btn>
+      <v-btn flat to="/" exact>Home</v-btn>
+      <v-btn flat to="/products">Products</v-btn>
       <v-btn flat class="snipcart-checkout"> <v-badge right>
       <span slot="badge">6</span>
       <v-icon
@@ -57,9 +57,9 @@
         fixed: true,
         clipped: true,
         items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'About', to: '/about' },
-          { icon: 'bubble_chart', title: 'Products', to: '/products' },
+          { title: 'Welcome', to: '/' },
+          { title: 'About', to: '/about' },
+          { title: 'Products', to: '/products' },
         ],
         title: 'Store Title'
       }
