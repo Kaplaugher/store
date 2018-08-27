@@ -82,9 +82,9 @@ export default {
       title: 'Store Title',
        productTypes: [
         { title: 'All', to: '/products'},
-        { title: 'Shirts', to: '/products' },
-        { title: 'Hats', to: '/products' },
-        { title: 'Socks', to: '/products' }
+        { title: 'Shirts', to: '/shop/shirts' },
+        { title: 'Hats', to: '/shop/hats' },
+        { title: 'Socks', to: '/shop/socks' }
       ],
     };
   }
