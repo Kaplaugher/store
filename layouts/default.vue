@@ -3,6 +3,7 @@
     <v-navigation-drawer
       :clipped="clipped"
       v-model="drawer"
+      disable-resize-watcher="true"
       fixed
       app
     >
@@ -25,9 +26,25 @@
       <v-toolbar-side-icon @click="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
+         <v-menu :nudge-width="100">
+        <v-toolbar-title slot="activator">
+          <span>Shop</span>
+          <v-icon dark>arrow_drop_down</v-icon>
+        </v-toolbar-title>
+
+        <v-list>
+          <v-list-tile
+            v-for="item in productTypes"
+            :key="item"
+            :to="item.to"
+          >
+            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
       <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat to="/" exact>Home</v-btn>
-      <v-btn flat to="/products">Products</v-btn>
+      <v-btn flat to="/about">About</v-btn>
       <v-btn flat class="snipcart-checkout"> <v-badge right>
       <span slot="badge">6</span>
       <v-icon
@@ -45,7 +62,7 @@
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app>
-      <span>&copy; 2017</span>
+      <span>&copy; Super Cool Store 2018</span>
     </v-footer>
   </v-app>
 </template>
@@ -58,12 +75,17 @@ export default {
       fixed: true,
       clipped: true,
       items: [
-        { title: "Welcome", to: "/" },
-        { title: "About", to: "/about" },
-        { title: "Products", to: "/products" }
+        { title: 'Welcome', to: '/' },
+        { title: 'About', to: '/about' },
+        { title: 'Products', to: '/products' }
       ],
-      title: "Store Title",
-      productTypes: ["Shirts", "Hats", "Gloves"]
+      title: 'Store Title',
+       productTypes: [
+        { title: 'All', to: '/products'},
+        { title: 'Shirts', to: '/products' },
+        { title: 'Hats', to: '/products' },
+        { title: 'Socks', to: '/products' }
+      ],
     };
   }
 };
