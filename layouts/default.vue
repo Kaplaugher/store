@@ -3,7 +3,7 @@
     <v-navigation-drawer
       :clipped="clipped"
       v-model="drawer"
-      disable-resize-watcher="true"
+      :disable-resize-watcher= "disabled"
       fixed
       app
     >
@@ -86,6 +86,7 @@ export default {
         { title: 'Hats', to: '/shop/hats' },
         { title: 'Socks', to: '/shop/socks' }
       ],
+      disabled: true
     };
   }
 };

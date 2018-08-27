@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <v-jumbotron
+  <v-jumbotron
     :gradient="gradient"
     dark
     src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
@@ -13,20 +12,28 @@
       </v-layout>
     </v-container>
   </v-jumbotron>
-  </div>
 </template>
-
 <script>
 export default {
+  props: {
+    title: {
+      type: String,
+      required: false
+    },
+    imgUrl: {
+      type: String,
+      required: false
+    }
+  },
   data() {
     return {
       gradient: 'to top right, rgba(63,81,181, .7), rgba(25,32,72, .7)'
+
     }
   }
-
 }
 </script>
-
 <style>
 
 </style>
+
