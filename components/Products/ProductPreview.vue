@@ -8,7 +8,7 @@
     <v-card-title primary-title>
       <div>
         <h3 class="headline mb-0">{{title}}</h3>
-        <p>{{previewText}}</p>
+        <p>{{price}}</p>
       </div>
     </v-card-title>
 
@@ -29,8 +29,8 @@ export default {
       type: String,
       required: true
     },
-    previewText: {
-      type: String,
+    price: {
+      type: Number,
       required: true
     },
     imgUrl: {

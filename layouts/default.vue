@@ -18,6 +18,7 @@
             <v-list-tile-title v-text="item.title"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
       </v-list>
     </v-navigation-drawer>
     <v-toolbar fixed app :clipped-left="clipped">
@@ -39,7 +40,7 @@
     </v-toolbar-items>
     </v-toolbar>
     <v-content>
-      <v-container>
+      <v-container fluid>
         <nuxt />
       </v-container>
     </v-content>
@@ -50,19 +51,20 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        drawer: false,
-        fixed: true,
-        clipped: true,
-        items: [
-          { title: 'Welcome', to: '/' },
-          { title: 'About', to: '/about' },
-          { title: 'Products', to: '/products' },
-        ],
-        title: 'Store Title'
-      }
-    }
+export default {
+  data() {
+    return {
+      drawer: false,
+      fixed: true,
+      clipped: true,
+      items: [
+        { title: "Welcome", to: "/" },
+        { title: "About", to: "/about" },
+        { title: "Products", to: "/products" }
+      ],
+      title: "Store Title",
+      productTypes: ["Shirts", "Hats", "Gloves"]
+    };
   }
+};
 </script>
