@@ -75,16 +75,16 @@ export default {
       fixed: true,
       clipped: true,
       items: [
-        { title: 'Welcome', to: '/' },
-        { title: 'About', to: '/about' },
-        { title: 'Products', to: '/products' }
+        { title: "Welcome", to: "/" },
+        { title: "About", to: "/about" },
+        { title: "Products", to: "/products" }
       ],
-      title: 'Store Title',
-       productTypes: [
-        { title: 'All', to: '/products'},
-        { title: 'Shirts', to: '/shop/shirts' },
-        { title: 'Hats', to: '/shop/hats' },
-        { title: 'Socks', to: '/shop/socks' }
+      title: "Store Title",
+      productTypes: [
+        { title: "All", to: "/products" },
+        { title: "Shirts", to: "/shop/shirts" },
+        { title: "Hats", to: "/shop/hats" },
+        { title: "Socks", to: "/shop/socks" }
       ],
       disabled: true
     };
