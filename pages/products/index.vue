@@ -1,4 +1,6 @@
   <template>
+  <div>
+    <Jumbotron title="All the jank" />
     <v-container grid-list-lg>
       <v-layout row wrap justify-center>
         <v-flex xs12 sm4 v-for="product in products" :key="product.id">
@@ -10,13 +12,17 @@
         </v-flex>
       </v-layout>
     </v-container>
+
+  </div>
   </template>
 
   <script>
 import ProductPreview from "@/components/Products/ProductPreview";
+import Jumbotron from "@/components/UI/Jumbotron";
 export default {
   components: {
-    ProductPreview
+    ProductPreview,
+    Jumbotron
   },
   // data() {
   //   return {

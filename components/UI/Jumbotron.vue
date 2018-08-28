@@ -1,13 +1,12 @@
 <template>
   <v-jumbotron
     :gradient="gradient"
-    dark
     src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
   >
     <v-container fill-height>
       <v-layout align-center>
         <v-flex text-xs-center>
-          <h3 class="display-3">Gradient over Image</h3>
+          <h3 class="display-3">{{title}}</h3>
         </v-flex>
       </v-layout>
     </v-container>
@@ -27,13 +26,11 @@ export default {
   },
   data() {
     return {
-      gradient: 'to top right, rgba(63,81,181, .7), rgba(25,32,72, .7)'
-
-    }
+      gradient: "to top right, rgba(63,81,181, .7), rgba(25,32,72, .7)"
+    };
   }
-}
+};
 </script>
 <style>
-
 </style>
 
