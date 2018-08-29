@@ -2,8 +2,8 @@
   <div class="card-wrapper">
     <div class="card-img">
       <div class="caption">
-        <p>{{title}}</p>
-        <p>{{price}}</p>
+        <p class="title">{{title}}</p>
+        <p class="price">{{price}}</p>
       </div>
     </div>
   </div>
@@ -33,4 +33,20 @@ export default {
 </script>
 
 <style>
+.card-img {
+  display: grid;
+  background: url("~/static/design1.jpg");
+  height: 300px;
+  background-size: cover;
+  align-items: end;
+  justify-items: center;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.price {
+  font-size: 24px;
+}
 </style>
