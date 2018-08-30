@@ -77,11 +77,11 @@ export default {
       items: [
         { title: "Welcome", to: "/" },
         { title: "About", to: "/about" },
-        { title: "Products", to: "/products" }
+        { title: "Shop", to: "/shop" }
       ],
       title: "Store Title",
       productTypes: [
-        { title: "All", to: "/products" },
+        { title: "All", to: "/shop" },
         { title: "Shirts", to: "/shop/shirts" },
         { title: "Hats", to: "/shop/hats" },
         { title: "Socks", to: "/shop/socks" }
