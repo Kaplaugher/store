@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Jumbotron title="Hats Yo" />
+    <Jumbotron title="Hats Yo" imgUrl="https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535664062/onlineStore/banner2.jpg"/>
   </div>
 </template>
 

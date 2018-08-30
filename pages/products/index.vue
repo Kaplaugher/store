@@ -1,6 +1,6 @@
   <template>
   <div>
-    <Jumbotron title="All the jank" />
+    <Jumbotron title="All the jank" imgUrl="https://res.cloudinary.com/kaptivating-io/image/upload/c_fit,f_auto,h_620,q_auto:good/v1535664731/onlineStore/banner4.jpg" />
     <v-container grid-list-lg>
       <v-layout row wrap justify-center>
         <v-flex xs12 sm4 v-for="product in products" :key="product.id">

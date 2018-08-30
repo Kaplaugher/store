@@ -1,6 +1,6 @@
 <template>
   <div class="card-wrapper">
-    <div class="card-img">
+    <div class="card-img" :style="{ background: `url(${imgUrl})`}">
       <div class="caption">
         <p class="title">{{title}}</p>
         <p class="price">{{price}}</p>
@@ -28,14 +28,13 @@ export default {
       type: String,
       required: true
     }
-  }
+  },
 };
 </script>
 
 <style>
 .card-img {
   display: grid;
-  background: url("~/static/design1.jpg");
   height: 300px;
   background-size: cover;
   align-items: end;

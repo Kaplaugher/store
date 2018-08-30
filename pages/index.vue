@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import dummyProducts from "../products.js";
+import dummyProducts from "../shirts.js";
 import ProductPreview from "@/components/Products/ProductPreview";
 export default {
   components: {
@@ -37,13 +37,13 @@ export default {
           src: "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535576470/onlineStore/design1.jpg"
         },
         {
-          src: "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535576470/onlineStore/design1.jpg"
+          src: "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535664967/onlineStore/smartmockups_jlh39074.jpg"
         },
         {
-          src: "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535576470/onlineStore/design1.jpg"
+          src: "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535665066/onlineStore/smartmockups_jlh3bhz6.jpg"
         },
         {
-          src: "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535576470/onlineStore/design1.jpg"
+          src: "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535665140/onlineStore/smartmockups_jlh3d5zu.jpg"
         }
       ],
       products: dummyProducts

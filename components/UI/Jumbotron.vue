@@ -1,7 +1,6 @@
 <template>
   <v-jumbotron
-    :gradient="gradient"
-    src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+    :src="imgUrl"
   >
     <v-container fill-height>
       <v-layout align-center>
@@ -26,7 +25,7 @@ export default {
   },
   data() {
     return {
-      gradient: "to top right, rgba(63,81,181, .7), rgba(25,32,72, .7)"
+
     };
   }
 };

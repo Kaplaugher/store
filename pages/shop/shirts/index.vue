@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Jumbotron title="Shirts Yo" />
+    <Jumbotron title="Shirts Yo" imgUrl="https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535663928/onlineStore/banner1.jpg"/>
   </div>
 </template>
 
@@ -11,7 +11,9 @@ export default {
     Jumbotron
   },
   data() {
-    return {};
+    return {
+
+    };
   }
 };
 </script>
