@@ -15,7 +15,7 @@
           <ProductPreview
             :title="product.title"
             :imgUrl="product.imgUrl"
-            :price="product.price"
+            :previewText="product.previewText"
             :id="product.id"/>
         </v-flex>
       </v-layout>
@@ -24,11 +24,30 @@
 </template>
 
 <script>
-import dummyProducts from "../shirts.js";
 import ProductPreview from "@/components/Products/ProductPreview";
 export default {
   components: {
     ProductPreview
+  },
+    asyncData(context) {
+    return context.app.$storyapi
+      .get("cdn/stories", {
+        version: context.isDev ? "draft" : "published",
+        starts_with: "products/"
+      })
+      .then(res => {
+        return {
+          products: res.data.stories.map(product => {
+            return {
+              id: product.slug,
+              title: product.content.title,
+              previewText: product.content.description,
+              imgUrl: product.content.imgUrl,
+              content: product.content.content
+            };
+          })
+        };
+      });
   },
   data() {
     return {
@@ -46,7 +65,6 @@ export default {
           src: "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535665140/onlineStore/smartmockups_jlh3d5zu.jpg"
         }
       ],
-      products: dummyProducts
     };
   }
 };

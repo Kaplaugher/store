@@ -1,11 +1,13 @@
 <template>
   <div class="card-wrapper">
-    <div class="card-img" :style="{ background: `url(${imgUrl})`}">
-      <div class="caption">
-        <p class="title">{{title}}</p>
-        <p class="price">{{price}}</p>
+    <nuxt-link :to="`/shop/shirts/${id}`">
+      <div class="card-img" :style="{ background: `url(${imgUrl})`}">
+        <div class="caption">
+          <p class="title">{{title}}</p>
+          <p class="price">{{price}}</p>
+        </div>
       </div>
-    </div>
+    </nuxt-link>
   </div>
 </template>
 
@@ -22,7 +24,7 @@ export default {
     },
     price: {
       type: Number,
-      required: true
+      required: false
     },
     imgUrl: {
       type: String,

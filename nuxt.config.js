@@ -97,7 +97,7 @@ module.exports = {
   },
   generate: {
     routes() {
-      return ['/products/first-shirt'];
+      return ['/shop/shirts/first-shirt'];
     },
   },
 };
