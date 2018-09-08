@@ -1,14 +1,12 @@
 <template>
-  <div class="card-wrapper">
-    <nuxt-link :to="`/shop/shirts/${id}`">
-      <div class="card-img" :style="{ background: `url(${imgUrl})`}">
+      <div class="card">
+        <img :src="imgUrl" alt="">
         <div class="caption">
           <p class="title">{{title}}</p>
           <p class="price">{{price}}</p>
+          <nuxt-link :to="`/shop/shirts/${id}`">LInk yo</nuxt-link>
         </div>
       </div>
-    </nuxt-link>
-  </div>
 </template>
 
 <script>
@@ -35,12 +33,16 @@ export default {
 </script>
 
 <style>
-.card-img {
+
+.card {
   display: grid;
-  height: 300px;
-  background-size: cover;
-  align-items: end;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.card img {
+  width: 100%;
 }
 
 .title {

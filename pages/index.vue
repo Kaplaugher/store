@@ -9,17 +9,17 @@
         ></v-carousel-item>
       </v-carousel>
     </div>
-    <v-container grid-list-lg>
-      <v-layout row wrap justify-center>
-        <v-flex xs12 sm4 v-for="product in products" :key="product.id">
+    <div class="products">
+
           <ProductPreview
             :title="product.title"
             :imgUrl="product.imgUrl"
+            :altImgUrl="product.altImgUrl"
             :previewText="product.previewText"
-            :id="product.id"/>
-        </v-flex>
-      </v-layout>
-    </v-container>
+            :id="product.id"
+            v-for="product in products" :key="product.id"/>
+    </div>
+
   </div>
 </template>
 
@@ -43,6 +43,7 @@ export default {
               title: product.content.title,
               previewText: product.content.description,
               imgUrl: product.content.imgUrl,
+              altImgUrl: product.content.altImgUrl,
               content: product.content.content
             };
           })
@@ -51,6 +52,7 @@ export default {
   },
   data() {
     return {
+      hidden: true,
       items: [
         {
           src: "https://res.cloudinary.com/kaptivating-io/image/upload/f_auto/v1535576470/onlineStore/design1.jpg"
@@ -70,14 +72,17 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 .carousel {
   height: 100vh;
 }
 
-.imgTest {
-  height: 200px;
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
 }
+
 </style>
 

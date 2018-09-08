@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app >
     <v-navigation-drawer
       :clipped="clipped"
       v-model="drawer"
@@ -22,11 +22,11 @@
 
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar fixed app :clipped-left="clipped">
+    <v-toolbar fixed app :clipped-left="clipped" color="black" class="white--text">
       <v-toolbar-side-icon @click="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
-         <v-menu :nudge-width="100">
+         <!-- <v-menu :nudge-width="100">
         <v-toolbar-title slot="activator">
           <span>Shop</span>
           <v-icon dark>arrow_drop_down</v-icon>
@@ -41,12 +41,12 @@
             <v-list-tile-title v-text="item.title"></v-list-tile-title>
           </v-list-tile>
         </v-list>
-      </v-menu>
+      </v-menu> -->
       <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat to="/" exact>Home</v-btn>
-      <v-btn flat to="/about">About</v-btn>
+      <v-btn class="white--text" flat to="/" exact>Home</v-btn>
+      <v-btn class="white--text" flat to="/about">About</v-btn>
       <v-btn flat class="snipcart-checkout"> <v-badge right>
-      <span slot="badge">6</span>
+      <span slot="badge"><span class="snipcart-total-items"></span></span>
       <v-icon
         large
         color="grey lighten-1"
