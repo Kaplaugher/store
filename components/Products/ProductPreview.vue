@@ -1,6 +1,6 @@
 <template>
       <div class="card">
-        <img :src="imgUrl" alt="">
+        <img :src="image" alt="" v-on:hover="image = altImgUrl">
         <div class="caption">
           <p class="title">{{title}}</p>
           <p class="price">{{price}}</p>
@@ -27,8 +27,17 @@ export default {
     imgUrl: {
       type: String,
       required: true
+    },
+    altImgUrl: {
+      type: String,
+      required: true
     }
   },
+  data() {
+    return {
+      image: this.imgUrl
+    }
+  }
 };
 </script>
 
