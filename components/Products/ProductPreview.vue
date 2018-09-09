@@ -46,12 +46,18 @@ export default {
 .card {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
 }
 
 .card img {
-  width: 100%;
+  max-height: 40vh;
+  justify-self: flex-end;
+}
+
+.caption {
+  justify-self: flex-start;
 }
 
 .title {

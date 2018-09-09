@@ -81,7 +81,6 @@ export default {
 .products {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
 }
 
 </style>
