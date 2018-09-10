@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-lg justify-center>
+  <!-- <v-container grid-list-lg justify-center>
     <v-layout row wrap align-center>
       <v-flex xs12 sm6>
         <img :src="imgUrl" :alt="title" class="productImg">
@@ -7,6 +7,13 @@
       <v-flex xs12 sm6>
         <h1>{{title}}</h1>
         <p>{{previewText}}</p>
+        <ul>
+          <li>Super good shit</li>
+          <li>the best mats yo</li>
+          <li>well worth the cash</li>
+        </ul>
+        <div>Front</div>
+        <div>Back</div>
         <v-btn
           color="info"
           class="snipcart-add-item"
@@ -21,12 +28,41 @@
         >Buy</v-btn>
       </v-flex>
     </v-layout>
-  </v-container>
+  </v-container> -->
+
+  <div class="shirt-detail-wrapper">
+    <div class="left">
+      <img :src="imgUrl" :alt="title" class="productImg">
+    </div>
+    <div class="right">
+       <h1>{{title}}</h1>
+        <p>{{previewText}}</p>
+        <ul>
+          <li>Super good shit</li>
+          <li>the best mats yo</li>
+          <li>well worth the cash</li>
+        </ul>
+        <div class="direction" @mouseover="updateProductImg(imgUrl)">Front</div>
+        <div class="direction" @mouseover="updateProductImg(altImgUrl)">Back</div>
+        <v-btn
+          color="info"
+          class="snipcart-add-item"
+          data-item-url="`http://myapp.com/products/${slug}`"
+          :data-item-id="itemId"
+          :data-item-name="title"
+          :data-item-price="price"
+          :data-item-weight="weight"
+          :data-item-description="previewText"
+          data-item-custom1-name="Size"
+          :data-item-custom1-options="sizeOptions"
+        >Buy</v-btn>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  asyncData(context) {
+    asyncData(context) {
     return context.app.$storyapi
       .get('cdn/stories/products/' + context.params.id, {
         version: context.isDev ? 'draft' : 'published'
@@ -34,6 +70,7 @@ export default {
       .then(res => {
         return {
           imgUrl: res.data.story.content.imgUrl,
+          altImgUrl: res.data.story.content.altImgUrl,
           title: res.data.story.content.title,
           previewText: res.data.story.content.content,
           price: res.data.story.content.price,
@@ -44,12 +81,38 @@ export default {
         };
         console.log(res.data.story.content);
       });
+  },
+  methods: {
+    updateProductImg(variantImg) {
+    this.imgUrl = variantImg;
+  }
   }
 };
 </script>
 
-<style>
+<style scoped>
+
 .productImg {
   max-width: 100%;
+}
+
+.shirt-detail-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 25px;
+  padding: 25px;
+}
+
+.left {
+  justify-self: flex-end;
+}
+
+.right {
+  justify-self: flex-start;
+}
+
+.direction:hover {
+  cursor: pointer;
 }
 </style>

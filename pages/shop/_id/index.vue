@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-lg justify-center>
+  <!-- <v-container grid-list-lg justify-center>
     <v-layout row wrap align-center>
       <v-flex xs12 sm6>
         <img :src="imgUrl" :alt="title" class="productImg">
@@ -28,7 +28,16 @@
         >Buy</v-btn>
       </v-flex>
     </v-layout>
-  </v-container>
+  </v-container> -->
+
+  <div class="shirt-detail-wrapper">
+    <div class="left">
+      yo
+    </div>
+    <div class="right">
+
+    </div>
+  </div>
 </template>
 
 <script>
