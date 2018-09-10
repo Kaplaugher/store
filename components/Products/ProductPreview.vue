@@ -51,6 +51,7 @@ export default {
   justify-items: center;
 }
 
+
 .card img {
   max-height: 40vh;
   justify-self: flex-end;
@@ -66,5 +67,15 @@ export default {
 
 .price {
   font-size: 24px;
+}
+
+@media (max-width: 600px) {
+    .card {
+        grid-template-columns: 1fr;
+    }
+
+    .caption {
+      justify-self: center;
+    }
 }
 </style>
