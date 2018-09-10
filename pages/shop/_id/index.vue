@@ -7,6 +7,13 @@
       <v-flex xs12 sm6>
         <h1>{{title}}</h1>
         <p>{{previewText}}</p>
+        <ul>
+          <li>Super good shit</li>
+          <li>the best mats yo</li>
+          <li>well worth the cash</li>
+        </ul>
+        <div>Front</div>
+        <div>Back</div>
         <v-btn
           color="info"
           class="snipcart-add-item"
